@@ -1,23 +1,9 @@
-// user related schema
-/**
- *  User : 
- *   user name
- *   first and last name
- *   address 
- *   phone no
- *   email
- *   password
- *   interests
- *   user_type
- *    - na
- *    - nu
- *    - nm
- */
-
 const mongoose = require('mongoose');
 const { number } = require('prop-types');
 
-const userSchema = mongoose.Schema({ 
+const userSchema = mongoose.Schema({
+    user_id :  new mongoose.Types.ObjectId, 
+
     firstName: {
         type: String,
         required: true
@@ -43,8 +29,9 @@ const userSchema = mongoose.Schema({
     interest: {
         type: String
     },
-    user_type:[{ngoAdmin, User, ngoMemeber}]
+    user_type:[String]
 })
 
 const UserModel=mongoose.Model('UserModel',userSchema);
 
+module.exports = {UserModel, userSchema};
