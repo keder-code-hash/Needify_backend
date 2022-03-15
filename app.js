@@ -53,6 +53,9 @@ const adminBro = new AdminBro({
     {resource: NgoModel},
     {resource: ProductModel}
   ], 
+  branding: {
+    companyName: 'Needify ',
+  }, 
   rootPath: '/admin',
 })
  
