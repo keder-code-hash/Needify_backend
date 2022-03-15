@@ -1,9 +1,6 @@
-const mongoose = require('mongoose');
-const { number } = require('prop-types');
+const mongoose = require('mongoose'); 
 
-const userSchema = mongoose.Schema({
-    user_id :  new mongoose.Types.ObjectId, 
-
+const userSchema = mongoose.Schema({ 
     firstName: {
         type: String,
         required: true
@@ -32,6 +29,6 @@ const userSchema = mongoose.Schema({
     user_type:[String]
 })
 
-const UserModel=mongoose.Model('UserModel',userSchema);
+const UserModel=mongoose.model('UserModel',userSchema);
 
-module.exports = {UserModel, userSchema};
+module.exports = UserModel;
