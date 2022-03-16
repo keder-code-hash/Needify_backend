@@ -6,7 +6,6 @@ const RequirementsSchema = mongoose.Schema({
     {
         type: Schema.Types.ObjectId,
         ref : "NgoModel",
-        
     },
     requuirment_issue : 
     {
@@ -14,23 +13,24 @@ const RequirementsSchema = mongoose.Schema({
     },
     requirment_from : 
     {
-        type:String
+        type:Date
     },
     requirment_to : 
     {
-        type:String
+        type:Date
     },
     required_prod : [
         {
             type: Schema.Types.ObjectId,
             ref : "ProductModel",
-            donated_by: [{ 
+            donated_by : [{ 
                 type : Schema.Types.ObjectId,
                 ref: "UserModel"
             }]
-        }
+        } 
     ]
 })
 
 const RequirmentsModel = mongoose.model('RequirmentsModel',RequirementsSchema);
-module.exports = {RequirementsSchema, RequirmentsModel};
+
+module.exports = RequirmentsModel ;
