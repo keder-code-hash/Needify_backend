@@ -1,4 +1,3 @@
-const mongoose=require('mongoose') 
 const AdminBro = require('admin-bro')
 const AdminBroExpressjs = require('admin-bro-expressjs') 
 const res=require('@admin-bro/mongoose')
@@ -13,17 +12,6 @@ const ProductModel = require('../models/product')
 const RequirementsModel=require('../models/Requirements')
 const DonationModel = require('../models/DonationAmount')
 const UserRoleModel = require('../models/UserRoles')
-const ResourceModel = require('../models/UserResources')
-
-
-const mongooseDb = mongoose.connect('mongodb+srv://rajib005:rajib@cluster0.wkthe.mongodb.net/myFirstDatabase?retryWrites=true&w=majority', { useNewUrlParser: true,useUnifiedTopology: true })
-
-
-
-const contentParent = {
-        name: 'content',
-        icon: 'Accessibility',
-}
 
 const adminBro = new AdminBro({ 
     resources: [
