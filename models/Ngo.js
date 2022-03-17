@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 const { UserModel } = require('./UserSchema');
 const { event } = require('./Events');
+const { AcheivementModel } = require('./Achievements');
 const NgoSchema = mongoose.Schema({
     ngo_id : new mongoose.Types.ObjectId,
     ngoName: {
@@ -30,10 +31,7 @@ const NgoSchema = mongoose.Schema({
     members: [{
         type: Schema.Types.ObjectId,
         ref : UserModel}],
-    achivements :[{
-        // achivements_name : {type: String},
-        // prize_name : {type: String}
-    }],
+    achivements :[{type: Schema.Types.ObjectId, ref: AcheivementModel}],
     event:[{
         event_id: [{type: Schema.Types.ObjectId, ref :?? }]
     }]
