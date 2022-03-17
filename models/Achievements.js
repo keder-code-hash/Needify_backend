@@ -1,7 +1,6 @@
 const mongoose = require('mongoose');
 
-const AcheivementSchema=mongoose.Schema({
-    acheivement_id : new mongoose.Types.ObjectId,
+const AcheivementSchema=mongoose.Schema({ 
     acheivement_name:{
         type:String,
         required:true,
@@ -17,4 +16,5 @@ const AcheivementSchema=mongoose.Schema({
 })
 
 const AcheivementModel = mongoose.model('AcheivementModel',AcheivementSchema);
-module.exports={AcheivementModel,AcheivementSchema};
+
+module.exports= AcheivementModel 

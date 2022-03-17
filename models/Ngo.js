@@ -1,15 +1,12 @@
-const mongoose = require('mongoose');
-const { UserModel } = require('./UserSchema');
-const { event } = require('./Events');
-const { AcheivementModel } = require('./Achievements');
-const NgoSchema = mongoose.Schema({
-    ngo_id : new mongoose.Types.ObjectId,
+const {mongoose,Schema} = require('mongoose');
+
+const NgoSchema = mongoose.Schema({ 
     ngoName: {
         type: String,
         required: true
     },
     RegNo :{
-        type: number,
+        type: Number,
         required: true
     },
     email: {
@@ -22,20 +19,25 @@ const NgoSchema = mongoose.Schema({
         required: true,
     },
     phoneNo : {
-        type : number,
+        type : Number,
         required : true,
     },
     registered_At :{
-        type: String
+        type: Date
     },
-    members: [{
-        type: Schema.Types.ObjectId,
-        ref : UserModel}],
-    achivements :[{type: Schema.Types.ObjectId, ref: AcheivementModel}],
-    event:[{
-        event_id: [{type: Schema.Types.ObjectId, ref :?? }]
+    members: [{ 
+        type : Schema.Types.ObjectId,
+        ref : "UserModel"
+    }],
+    achivements :[{   
+        type : Schema.Types.ObjectId,
+        ref : "AcheivementModel"
+    }],
+    event:[{   
+        type : Schema.Types.ObjectId,
+        ref :"EventsModel"
     }]
 })
 
 const NgoModel = mongoose.model('NgoModel',NgoSchema);
-module.exports = {NgoModel, NgoSchema};
+module.exports = NgoModel

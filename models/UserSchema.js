@@ -1,9 +1,6 @@
-const mongoose = require('mongoose');
-const { number } = require('prop-types');
+const {mongoose,Schema} = require('mongoose'); 
 
-const userSchema = mongoose.Schema({
-    user_id :  new mongoose.Types.ObjectId, 
-
+const userSchema = mongoose.Schema({ 
     firstName: {
         type: String,
         required: true
@@ -29,9 +26,13 @@ const userSchema = mongoose.Schema({
     interest: {
         type: String
     },
-    user_type:[String]
+    user_type:{
+        type: Schema.Types.ObjectId,
+        ref : "UserRoleModel",
+        require :true,
+    } 
 })
+userSchema.set("timestamps",true)
+const UserModel=mongoose.model('UserModel',userSchema);
 
-const UserModel=mongoose.Model('UserModel',userSchema);
-
-module.exports = {UserModel, userSchema};
+module.exports = UserModel;
