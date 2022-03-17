@@ -1,4 +1,4 @@
-const mongoose = require('mongoose'); 
+const {mongoose,Schema} = require('mongoose'); 
 
 const userSchema = mongoose.Schema({ 
     firstName: {
@@ -26,9 +26,13 @@ const userSchema = mongoose.Schema({
     interest: {
         type: String
     },
-    user_type:[String]
+    user_type:{
+        type: Schema.Types.ObjectId,
+        ref : "UserRoleModel",
+        require :true,
+    } 
 })
-
+userSchema.set("timestamps",true)
 const UserModel=mongoose.model('UserModel',userSchema);
 
 module.exports = UserModel;

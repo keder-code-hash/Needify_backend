@@ -5,6 +5,10 @@ const ProductSchema =mongoose.Schema({
             type:String,
             required:true
         },
+        prod_unit : {
+            type : String,
+            enum : ["kg","gm","amt","Lt"]
+        },
         prod_quant:{
             type:Number,
             required : true

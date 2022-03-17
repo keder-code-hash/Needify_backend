@@ -1,14 +1,35 @@
-// import { UserModel } from '../models/UserSchema'
-// const AdminJSMongoose = require('@adminjs/mongoose')
-// const AdminJS = require('adminjs')
+const AdminBro = require('admin-bro')
+const AdminBroExpressjs = require('admin-bro-expressjs') 
+const res=require('@admin-bro/mongoose')
 
+AdminBro.registerAdapter(res)
 
-// AdminJS.registerAdapter(AdminJSMongoose) 
-// const adminJsOptions = {
-//     rootPath: '/admin',
-//     resources: [UserModel],
-// }
-// const AdminJS = new AdminJS(adminJsOptions)
-// const Adminrouter = AdminJSExpress.buildRouter(adminJs)
+const UserModel=require('../models/UserSchema')
+const AcheivementModel=require('../models/Achievements')
+const EventModel=require('../models/Events')
+const NgoModel =require('../models/Ngo')
+const ProductModel = require('../models/product')
+const RequirementsModel=require('../models/Requirements')
+const DonationModel = require('../models/DonationAmount')
+const UserRoleModel = require('../models/UserRoles')
 
-// export {Adminrouter}
+const adminBro = new AdminBro({ 
+    resources: [
+        {resource: UserModel},
+        {resource: AcheivementModel},
+        {resource: EventModel},
+        {resource: NgoModel},
+        {resource: ProductModel},
+        {resource : RequirementsModel},
+        {resource : DonationModel},
+        {resource : UserRoleModel} 
+    ], 
+    branding: {
+    companyName: 'Needify ',
+    }, 
+    rootPath: '/admin',
+})
+
+const router = AdminBroExpressjs.buildRouter(adminBro)
+
+module.exports = { router,adminBro };
