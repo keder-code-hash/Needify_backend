@@ -6,9 +6,11 @@ var logger = require('morgan');
 
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
+const mongoose = require('mongoose');
  
 const {router,adminBro} = require('./routes/AdminRouter');
-
+const db_link = "mongodb+srv://rajib005:rajib@cluster0.wkthe.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
+mongoose.connect(db_link);
 
 var app = express(); 
 
