@@ -9,7 +9,10 @@ const DonationSchema= new Schema({
         type : Schema.Types.ObjectId,
         ref : "ProductModel"
     },
-   
+    ngo :{
+        type : Schema.Types.ObjectId,
+        ref : "NgoModel"
+    },
     donation_params :[{
         Amount : {
                 type : Number,
