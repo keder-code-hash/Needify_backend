@@ -10,6 +10,13 @@
  * 
  */
 
+
+// {
+//     ngo_id : ,
+//     user_dets : ,
+//     donation_params : [{}]
+// }
+
 // {
 //     ngo_name : ,
 //     requirements_id : ,
@@ -20,3 +27,5 @@
 //     },
 //     prod_name : [{}] 
 // }
+
+
