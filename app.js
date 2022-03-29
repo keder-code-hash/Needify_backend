@@ -3,10 +3,12 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-
+const mongoose=require('mongoose');
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
  
+const db_link="mongodb+srv://rajib005:rajib@cluster0.wkthe.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
+mongoose.connect(db_link);
 const {router,adminBro} = require('./routes/AdminRouter');
 
 
