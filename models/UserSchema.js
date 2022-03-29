@@ -28,8 +28,7 @@ const userSchema = mongoose.Schema({
     },
     user_type:{
         type: Schema.Types.ObjectId,
-        ref : "UserRoleModel",
-        require :true,
+        ref : "UserRolesModel", 
     } 
 })
 userSchema.set("timestamps",true)

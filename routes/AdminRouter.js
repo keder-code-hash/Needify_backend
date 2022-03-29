@@ -1,8 +1,11 @@
+const mongoose=require("mongoose");
 const AdminBro = require('admin-bro')
 const AdminBroExpressjs = require('admin-bro-expressjs') 
 const res=require('@admin-bro/mongoose')
 
 AdminBro.registerAdapter(res)
+
+
 
 const UserModel=require('../models/UserSchema')
 const AcheivementModel=require('../models/Achievements')
@@ -12,6 +15,8 @@ const ProductModel = require('../models/product')
 const RequirementsModel=require('../models/Requirements')
 const DonationModel = require('../models/DonationAmount')
 const UserRoleModel = require('../models/UserRoles')
+
+const mongooseDb = mongoose.connect('mongodb+srv://rajib005:rajib@cluster0.wkthe.mongodb.net/myFirstDatabase?retryWrites=true&w=majority', { useNewUrlParser: true,useUnifiedTopology: true })
 
 const adminBro = new AdminBro({ 
     resources: [
@@ -25,7 +30,7 @@ const adminBro = new AdminBro({
         {resource : UserRoleModel} 
     ], 
     branding: {
-    companyName: 'Needify ',
+        companyName: 'Needify ',
     }, 
     rootPath: '/admin',
 })

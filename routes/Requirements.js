@@ -5,3 +5,15 @@
  * 4. update any requirement value
  *  
  */
+
+// {
+//     ngo_id : ,
+//     requirements_id : ,
+//     req_ele_details : [{}] ,
+//     time_frame : {
+//         start:,
+//         end:,
+//     },
+//     requir_purpose: ,
+//     add_new_requir :[{}]
+// }
