@@ -14,6 +14,8 @@ function getSignup(req, res) {
 async function postSignup(req, res) {
   let dataobj = req.body;
   let user = await userModel.create(dataobj);
+  
+  res.statusCode=200;
   res.json({
     message: 'SignUp req send'
   }) 
